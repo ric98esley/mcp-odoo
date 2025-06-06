@@ -116,7 +116,7 @@ Create an `odoo_config.json` file in your working directory:
 
 ```bash
 # Using the module
-python -m odoo_mcp_improved
+python -m odoo_mcp
 
 # Using Docker
 docker run -i --rm \
@@ -288,7 +288,7 @@ Add the following to your `claude_desktop_config.json`:
   "mcpServers": {
     "odoo": {
       "command": "python",
-      "args": ["-m", "odoo_mcp_improved"],
+      "args": ["-m", "odoo_mcp"],
       "env": {
         "ODOO_URL": "https://your-odoo-instance.com",
         "ODOO_DB": "your_database",
