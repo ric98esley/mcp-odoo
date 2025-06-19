@@ -1,5 +1,7 @@
 # Odoo MCP Improved
 
+![demo.gif](demo.gif)
+
 <div align="center">
 
 ![Odoo MCP Improved Logo](https://img.shields.io/badge/Odoo%20MCP-Improved-brightgreen?style=for-the-badge&logo=odoo)
