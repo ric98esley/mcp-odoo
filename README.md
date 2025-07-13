@@ -1,3 +1,4 @@
+
 # Odoo MCP Improved
 
 ![demo.gif](demo.gif)
@@ -26,7 +27,6 @@
 - [Tools Reference](#-tools-reference)
 - [Resources Reference](#-resources-reference)
 - [Prompts](#-prompts)
-- [Docker Support](#-docker-support)
 - [Claude Desktop Integration](#-claude-desktop-integration)
 - [License](#-license)
 
@@ -78,12 +78,6 @@ cd odoo-mcp-improved
 pip install -e .
 ```
 
-### Using Docker
-
-```bash
-docker build -t mcp/odoo:latest -f Dockerfile .
-```
-
 ---
 
 ## ⚙️ Configuration
@@ -119,14 +113,6 @@ Create an `odoo_config.json` file in your working directory:
 ```bash
 # Using the module
 python -m odoo_mcp
-
-# Using Docker
-docker run -i --rm \
-  -e ODOO_URL=https://your-odoo-instance.com \
-  -e ODOO_DB=your_database \
-  -e ODOO_USERNAME=your_username \
-  -e ODOO_PASSWORD=your_password \
-  yourusername/odoo-mcp-improved
 ```
 
 ### Example Interactions
@@ -143,6 +129,29 @@ Calculate our current liquidity and profitability ratios based on the latest fin
 
 # Customer Insights
 Provide insights on customer ABC's purchase history and payment patterns.
+```
+
+---
+
+## 🤖 Claude Desktop Integration
+
+Add the following to your `claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "odoo": {
+      "command": "python",
+      "args": ["-m", "odoo_mcp"],
+      "env": {
+        "ODOO_URL": "https://your-odoo-instance.com",
+        "ODOO_DB": "your_database",
+        "ODOO_USERNAME": "your_username",
+        "ODOO_PASSWORD": "your_password"
+      }
+    }
+  }
+}
 ```
 
 ---
@@ -251,93 +260,11 @@ Odoo MCP Improved includes specialized prompts for different business scenarios:
 
 ---
 
-## 🐳 Docker Support
-
-### Running with Docker
-
-```bash
-docker run -i --rm \
-  -e ODOO_URL=https://your-odoo-instance.com \
-  -e ODOO_DB=your_database \
-  -e ODOO_USERNAME=your_username \
-  -e ODOO_PASSWORD=your_password \
-  yourusername/odoo-mcp-improved
-```
-
-### Docker Compose
-
-```yaml
-version: '3'
-
-services:
-  odoo-mcp-improved:
-    image: yourusername/odoo-mcp-improved:latest
-    environment:
-      - ODOO_URL=https://your-odoo-instance.com
-      - ODOO_DB=your_database
-      - ODOO_USERNAME=your_username
-      - ODOO_PASSWORD=your_password
-```
-
----
-
-## 🤖 Claude Desktop Integration
-
-Add the following to your `claude_desktop_config.json`:
-
-```json
-{
-  "mcpServers": {
-    "odoo": {
-      "command": "python",
-      "args": ["-m", "odoo_mcp"],
-      "env": {
-        "ODOO_URL": "https://your-odoo-instance.com",
-        "ODOO_DB": "your_database",
-        "ODOO_USERNAME": "your_username",
-        "ODOO_PASSWORD": "your_password"
-      }
-    }
-  }
-}
-```
-
-For Docker:
-
-```json
-{
-  "mcpServers": {
-    "odoo": {
-      "command": "docker",
-      "args": [
-        "run",
-        "-i",
-        "--rm",
-        "-e", "ODOO_URL",
-        "-e", "ODOO_DB",
-        "-e", "ODOO_USERNAME",
-        "-e", "ODOO_PASSWORD",
-        "yourusername/odoo-mcp-improved"
-      ],
-      "env": {
-        "ODOO_URL": "https://your-odoo-instance.com",
-        "ODOO_DB": "your_database",
-        "ODOO_USERNAME": "your_username",
-        "ODOO_PASSWORD": "your_password"
-      }
-    }
-  }
-}
-```
-
----
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 This repo is extended from [mcp-odoo](https://github.com/tuanle96/mcp-odoo) - [Lê Anh Tuấn](https://github.com/tuanle96)
-
 
 ---
 
