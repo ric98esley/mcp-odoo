@@ -1,12 +1,4 @@
 """
-<<<<<<< HEAD
-Odoo MCP Server - MCP Server for Odoo Integration
-"""
-
-from .server import mcp
-
-__all__ = ["mcp"]
-=======
 Actualización del archivo __init__.py para incluir todos los módulos
 """
 
@@ -33,4 +25,3 @@ __all__ = [
     'resources',
     'extensions'
 ]
->>>>>>> hachecito/main
