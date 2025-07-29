@@ -14,6 +14,7 @@ from mcp.server.fastmcp import Context, FastMCP
 from pydantic import BaseModel, Field
 
 from .odoo_client import OdooClient, get_odoo_client
+from .extensions import register_all_extensions
 
 
 @dataclass
@@ -442,3 +443,7 @@ def search_holidays(
 
     except Exception as e:
         return SearchHolidaysResponse(success=False, error=str(e))
+
+
+# Registrar todas las extensiones
+register_all_extensions(mcp)
