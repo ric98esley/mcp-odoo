@@ -10,6 +10,7 @@ from .tools_sales import register_sales_tools
 from .tools_purchase import register_purchase_tools
 from .tools_inventory import register_inventory_tools
 from .tools_accounting import register_accounting_tools
+from .tools_hr import register_hr_tools
 
 def register_all_extensions(mcp: FastMCP) -> None:
     """
@@ -23,6 +24,7 @@ def register_all_extensions(mcp: FastMCP) -> None:
     register_all_resources(mcp)
     
     # Registrar herramientas
+    register_hr_tools(mcp)
     register_sales_tools(mcp)
     register_purchase_tools(mcp)
     register_inventory_tools(mcp)
