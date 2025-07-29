@@ -55,7 +55,7 @@ def execute_method(
     ctx: Context,
     model: str,
     method: str,
-    args: List = None,
+    args: Optional[List] = None,
     kwargs: Optional[Dict[str, Any]] = None,
 ) -> Dict[str, Any]:
     """
