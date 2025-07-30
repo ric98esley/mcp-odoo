@@ -68,17 +68,10 @@ def main() -> int:
         
         logger.info(f"MCP object type: {type(mcp)}")
         
-        # Run server in stdio mode like the official examples
-        async def arun():
-            logger.info("Starting Odoo MCP server with stdio transport...")
-            async with stdio_server() as streams:
-                logger.info("Stdio server initialized, running MCP server...")
-                await mcp._mcp_server.run(
-                    streams[0], streams[1], mcp._mcp_server.create_initialization_options()
-                )
-                
-        # Run server
-        anyio.run(arun)
+
+        logger.info("Starting Odoo MCP server with streamable http...")
+        mcp.run(transport="streamable-http")
+
         logger.info("MCP server stopped normally")
         return 0
         
@@ -88,4 +81,4 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    sys.exit(main()) 
+    sys.exit(main())

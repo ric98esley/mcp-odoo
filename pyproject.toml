@@ -3,13 +3,8 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-<<<<<<< HEAD
 name = "odoo-mcp"
 version = "0.0.3"
-=======
-name = "odoo-mcp-improved"
-version = "1.0.2"
->>>>>>> hachecito/main
 description = "MCP Server for Odoo Integration"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -20,15 +15,10 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
     "Operating System :: OS Independent",
 ]
-<<<<<<< HEAD
 keywords = ["odoo", "mcp", "server"]
 authors = [
-    {name = "Lê Anh Tuấn", email = "justin.le.1105@gmail.com"}
-=======
-keywords = ["odoo", "mcp", "server", "ai"]
-authors = [
+    {name = "Lê Anh Tuấn", email = "justin.le.1105@gmail.com"},
     {name = "Yhasmani Valdes", email = "yhasmanivm@gmail.com"}
->>>>>>> hachecito/main
 ]
 dependencies = [
     "mcp>=0.1.1",
@@ -37,13 +27,8 @@ dependencies = [
 ]
 
 [project.urls]
-<<<<<<< HEAD
 Homepage = "https://github.com/tuanle96/mcp-odoo"
 Issues = "https://github.com/tuanle96/mcp-odoo/issues"
-=======
-Homepage = "https://github.com/hachecito/odoo-mcp-improved"
-Issues = "https://github.com/hachecito/odoo-mcp-improved/issues"
->>>>>>> hachecito/main
 
 [project.optional-dependencies]
 dev = [
@@ -56,11 +41,7 @@ dev = [
 ]
 
 [project.scripts]
-<<<<<<< HEAD
 odoo-mcp = "odoo_mcp.__main__:main"
-=======
-odoo-mcp-improved = "odoo_mcp.__main__:main"
->>>>>>> hachecito/main
 
 [tool.setuptools]
 package-dir = {"" = "src"}
